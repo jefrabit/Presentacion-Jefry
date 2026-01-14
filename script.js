@@ -193,3 +193,84 @@
     }
 
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const particleContainer = document.createElement('div');
+    particleContainer.classList.add('particles-container');
+    document.body.appendChild(particleContainer);
+
+    for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+
+        // Random positioning
+        particle.style.left = Math.random() * 100 + 'vw';
+        particle.style.top = Math.random() * 100 + 'vh';
+
+        // Random size
+        const size = Math.random() * 3;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+
+        // Random animation duration
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particle.style.animationDelay = (Math.random() * 5) + 's';
+
+        particleContainer.appendChild(particle);
+    }
+});
+
+
+// 3D Tilt Effect logic
+// 3D Tilt Effect logic (Intensified)
+document.addEventListener('mousemove', (e) => {
+    // Background Parallax
+    const orbs = document.querySelectorAll('.ambient-orb');
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    // Smooth orb movement
+    requestAnimationFrame(() => {
+        orbs.forEach((orb, index) => {
+            const speed = (index + 1) * 0.02; // Increased speed
+            const x = (e.clientX - centerX) * speed;
+            const y = (e.clientY - centerY) * speed;
+            orb.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        // 3D Card Tilt (Active on tablets+ desktops now)
+        if (window.innerWidth > 600) {
+            const cards = document.querySelectorAll('.content-box, .highlight-box');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                // Only animate visible cards
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const cardCenterX = rect.left + rect.width / 2;
+                    const cardCenterY = rect.top + rect.height / 2;
+
+                    // Angle calculation (Intensified x2)
+                    const tiltX = ((e.clientY - cardCenterY) / window.innerHeight) * 15; // Max 15deg
+                    const tiltY = -((e.clientX - cardCenterX) / window.innerWidth) * 15;
+
+                    // Apply transform
+                    card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+                    // Dynamic glow effect
+                    const shadowX = -tiltY * 2;
+                    const shadowY = tiltX * 2;
+                    card.style.boxShadow = `${shadowX}px ${shadowY}px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(178, 62, 255, 0.4)`;
+                }
+            });
+        }
+    });
+});
+
+// Reset tilt on mouse leave
+document.addEventListener('mouseleave', () => {
+    const cards = document.querySelectorAll('.content-box, .highlight-box');
+    cards.forEach(card => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        card.style.boxShadow = '';
+    });
+});
+

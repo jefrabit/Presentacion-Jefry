@@ -13,10 +13,10 @@ body {
     height: 100%;
     overflow: hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1E1E1E 25%, #2a1a3d 50%, #1E1E1E 75%, #0a0a0a 100%);
+    background: linear-gradient(135deg, #1E1E1E 0%, #171717 25%, #220B35 50%, #171717 75%, #1E1E1E 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
-    color: #f1f5f9;
+    color: #e2e8f0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     touch-action: pan-y pinch-zoom;
@@ -46,15 +46,41 @@ body {
     left: 0;
     width: 100%;
     height: 4px;
-    background: rgba(30, 30, 30, 0.5);
-    z-index: 1000;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 9999;
+    overflow: hidden;
 }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #B23EFF, #d580ff);
+    background: linear-gradient(90deg, #B23EFF, #d580ff, #ffffff);
+    background-size: 200% 100%;
+    width: 0%;
     transition: width 0.3s ease;
-    box-shadow: 0 0 10px rgba(178, 62, 255, 0.6);
+    box-shadow: 0 0 15px #B23EFF, 0 0 30px rgba(178, 62, 255, 0.5);
+    animation: progressFlow 2s linear infinite;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: white;
+    box-shadow: 0 0 10px white;
+}
+
+@keyframes progressFlow {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
 }
 
 /* ===================================
@@ -234,13 +260,24 @@ body {
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 40px;
-    background: linear-gradient(135deg, #B23EFF, #d580ff, #f0b3ff);
+    background: linear-gradient(90deg, #B23EFF, #e879f9, #ffffff, #B23EFF);
+    background-size: 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: titleAppear 0.8s ease-out backwards;
-    text-shadow: 0 0 40px rgba(178, 62, 255, 0.4);
+    animation: holographicShine 6s linear infinite, titleAppear 0.8s ease-out backwards;
+    text-shadow: 0 0 30px rgba(178, 62, 255, 0.4);
     letter-spacing: -0.02em;
+}
+
+@keyframes holographicShine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 300% 50%;
+    }
 }
 
 @keyframes titleGlow {
@@ -387,25 +424,38 @@ body {
    =================================== */
 
 .content-box {
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(42, 26, 61, 0.6));
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(178, 62, 255, 0.3);
+    background: rgba(30, 30, 30, 0.4);
+    /* More transparent for glass effect */
+    border: 1px solid rgba(178, 62, 255, 0.15);
+    /* Subtler border */
     border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 25px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: boxFadeIn 0.6s ease-out backwards;
+    padding: 35px;
+    margin-bottom: 30px;
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+    position: relative;
     overflow: hidden;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.content-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(178, 62, 255, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .content-box:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(178, 62, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border-color: rgba(178, 62, 255, 0.7);
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(42, 26, 61, 0.7));
+    transform: translateY(-5px) scale(1.01);
+    border-color: rgba(178, 62, 255, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.content-box:hover::before {
+    opacity: 1;
 }
 
 @keyframes boxFadeIn {
@@ -438,13 +488,33 @@ body {
 }
 
 .highlight-box {
-    background: linear-gradient(135deg, rgba(178, 62, 255, 0.3), rgba(213, 128, 255, 0.3));
-    border: 2px solid rgba(178, 62, 255, 0.7);
-    box-shadow: 0 0 30px rgba(178, 62, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #B23EFF;
+    background: linear-gradient(90deg, rgba(178, 62, 255, 0.1), transparent);
+    border-top: 1px solid rgba(178, 62, 255, 0.2);
+    border-right: 1px solid rgba(178, 62, 255, 0.2);
+    border-bottom: 1px solid rgba(178, 62, 255, 0.2);
+    box-shadow: 0 0 15px rgba(178, 62, 255, 0.1);
+    animation: neonPulse 3s infinite alternate;
+}
+
+@keyframes neonPulse {
+    from {
+        box-shadow: 0 0 10px rgba(178, 62, 255, 0.1), inset 0 0 10px rgba(178, 62, 255, 0.05);
+        border-color: rgba(178, 62, 255, 0.4);
+    }
+
+    to {
+        box-shadow: 0 0 25px rgba(178, 62, 255, 0.4), inset 0 0 20px rgba(178, 62, 255, 0.2);
+        border-color: #B23EFF;
+    }
 }
 
 .highlight-box:hover {
-    box-shadow: 0 0 50px rgba(178, 62, 255, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    background: linear-gradient(90deg, rgba(178, 62, 255, 0.15), transparent);
+    animation: none;
+    /* Stop pulse on hover for steadiness */
+    box-shadow: 0 0 40px rgba(178, 62, 255, 0.5);
+    border-color: #d580ff;
 }
 
 .example-box {
@@ -918,23 +988,38 @@ body {
     from {}
 
     to {
-        box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        box-shadow: 0 0 30px rgba(178, 62, 255, 0.5);
     }
 }
 
 .conclusion-statement p {
     font-size: 2rem;
     font-weight: 700;
-    color: #60a5fa;
+    color: #f0b3ff;
 }
 
 .final-statement {
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    background: linear-gradient(135deg, #B23EFF, #8b31c7);
     border-radius: 15px;
     padding: 40px;
     text-align: center;
     margin-top: 40px;
-    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 10px 40px rgba(178, 62, 255, 0.4);
+    animation: finalPulse 2s infinite;
+}
+
+@keyframes finalPulse {
+    0% {
+        box-shadow: 0 10px 40px rgba(178, 62, 255, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 10px 60px rgba(178, 62, 255, 0.7);
+    }
+
+    100% {
+        box-shadow: 0 10px 40px rgba(178, 62, 255, 0.4);
+    }
 }
 
 .final-statement p {
@@ -951,7 +1036,7 @@ body {
     text-align: center;
     font-size: 1.3rem;
     font-weight: 700;
-    color: #60a5fa;
+    color: #d580ff;
     margin-top: 30px;
     animation: emphasisGlow 0.8s ease-out 0.5s backwards;
 }
@@ -1018,7 +1103,7 @@ body {
 }
 
 .comparison-table thead {
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    background: linear-gradient(135deg, #B23EFF, #8b31c7);
 }
 
 .comparison-table th {
@@ -1045,7 +1130,7 @@ body {
 }
 
 .comparison-table tbody tr:hover {
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(178, 62, 255, 0.1);
 }
 
 .highlight-cell {
@@ -1058,8 +1143,8 @@ body {
    =================================== */
 
 .conclusion-statement {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2));
-    border: 2px solid #3b82f6;
+    background: linear-gradient(135deg, rgba(178, 62, 255, 0.2), rgba(213, 128, 255, 0.2));
+    border: 2px solid #B23EFF;
     border-radius: 15px;
     padding: 40px;
     text-align: center;
@@ -1069,17 +1154,17 @@ body {
 .conclusion-statement p {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #60a5fa;
+    color: #f0b3ff;
     margin: 10px 0;
 }
 
 .final-statement {
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    background: linear-gradient(135deg, #B23EFF, #8b31c7);
     border-radius: 15px;
     padding: 40px;
     text-align: center;
     margin: 30px 0;
-    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 10px 40px rgba(178, 62, 255, 0.4);
 }
 
 .final-statement p {
@@ -1111,7 +1196,7 @@ body {
 }
 
 .content-box ol li strong {
-    color: #60a5fa;
+    color: #B23EFF;
 }
 
 /* ===================================
@@ -1200,8 +1285,9 @@ body {
 
     .bullet-list li,
     .content-box ul li {
-        font-size: 1.05rem;
-        margin-bottom: 12px;
+        font-size: 1.25rem;
+        /* Increased from 1.05rem */
+        margin-bottom: 14px;
         padding-left: 32px;
         line-height: 1.6;
         word-break: break-word;
@@ -1213,11 +1299,13 @@ body {
     }
 
     .stat-number {
-        font-size: 3.5rem;
+        font-size: 4rem;
+        /* Increased from 3.5rem */
     }
 
     .stat-label {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        /* Increased from 1.1rem */
     }
 
     .two-columns {
@@ -1353,7 +1441,8 @@ body {
 
     /* Ordered lists */
     .content-box ol li {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        /* Increased from 1rem */
     }
 }
 
@@ -1429,5 +1518,126 @@ body {
 
     .emphasis-text {
         font-size: 1.05rem;
+    }
+}
+
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(178, 62, 255, 0.6);
+    border-radius: 50%;
+    box-shadow: 0 0 5px #B23EFF;
+    animation: floatParticle linear infinite;
+    opacity: 0;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-100vh) translateX(20px);
+        opacity: 0;
+    }
+}
+
+/* ===================================
+   Staggered Animations (Mobile & Desktop)
+   =================================== */
+
+@keyframes fadeInUpShort {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Base state: hidden */
+.slide .content-box h3,
+.slide .content-box li,
+.slide .stat-box {
+    opacity: 0;
+}
+
+/* Active state: trigger animation */
+.slide.active .content-box h3 {
+    animation: fadeInUpShort 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+}
+
+.slide.active .content-box li {
+    animation: fadeInUpShort 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.slide.active .stat-box {
+    animation: fadeInUpShort 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
+}
+
+/* Staggered delays for lists */
+.slide.active .content-box li:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.slide.active .content-box li:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.slide.active .content-box li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.slide.active .content-box li:nth-child(4) {
+    animation-delay: 0.7s;
+}
+
+.slide.active .content-box li:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.slide.active .content-box li:nth-child(6) {
+    animation-delay: 0.9s;
+}
+
+/* Mobile optimization for animations */
+@media (max-width: 768px) {
+
+    /* Slightly faster on mobile for snappier feel */
+    .slide.active .content-box h3 {
+        animation-duration: 0.5s;
+    }
+
+    .slide.active .content-box li {
+        animation-duration: 0.4s;
+    }
+
+    /* Ensure hardware acceleration */
+    .content-box,
+    li,
+    h3 {
+        will-change: transform, opacity;
     }
 }
