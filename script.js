@@ -11,7 +11,7 @@
     // ===================================
 
     let currentSlide = 1;
-    const totalSlides = 11;
+    const totalSlides = 20;
 
     // ===================================
     // DOM Elements
@@ -180,7 +180,7 @@
         goToSlide(1);
 
         // Log initialization
-        console.log('Presentación inicializada con 11 slides');
+        console.log('Presentación inicializada con 20 slides');
         console.log('Controles: Flechas ← →, Espacio, Swipe (móvil)');
         console.log('Esc para volver al inicio');
     }
