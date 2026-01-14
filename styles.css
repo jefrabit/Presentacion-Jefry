@@ -13,7 +13,7 @@ body {
     height: 100%;
     overflow: hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 25%, #2d1b4e 50%, #1a1f3a 75%, #0a0e27 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1E1E1E 25%, #2a1a3d 50%, #1E1E1E 75%, #0a0a0a 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     color: #f1f5f9;
@@ -46,15 +46,15 @@ body {
     left: 0;
     width: 100%;
     height: 4px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(30, 30, 30, 0.5);
     z-index: 1000;
 }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    background: linear-gradient(90deg, #B23EFF, #d580ff);
     transition: width 0.3s ease;
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 10px rgba(178, 62, 255, 0.6);
 }
 
 /* ===================================
@@ -64,16 +64,16 @@ body {
 .slide-counter {
     position: fixed;
     top: 20px;
-    right: 30px;
-    background: rgba(15, 23, 42, 0.8);
+    right: 20px;
+    background: rgba(30, 30, 30, 0.9);
     backdrop-filter: blur(10px);
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 25px;
     font-size: 0.9rem;
     font-weight: 600;
-    color: #94a3b8;
+    color: #B23EFF;
     z-index: 999;
-    border: 1px solid rgba(148, 163, 184, 0.2);
+    border: 1px solid rgba(178, 62, 255, 0.4);
 }
 
 /* ===================================
@@ -96,7 +96,7 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(59, 130, 246, 0.9));
+    background: linear-gradient(135deg, rgba(178, 62, 255, 0.9), rgba(213, 128, 255, 0.9));
     border: 2px solid rgba(255, 255, 255, 0.3);
     color: white;
     cursor: pointer;
@@ -104,15 +104,15 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(178, 62, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     pointer-events: auto;
     backdrop-filter: blur(15px);
 }
 
 .nav-btn:hover {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 1), rgba(59, 130, 246, 1));
+    background: linear-gradient(135deg, #B23EFF, #d580ff);
     transform: scale(1.2);
-    box-shadow: 0 12px 48px rgba(139, 92, 246, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 48px rgba(178, 62, 255, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .nav-btn:active {
@@ -206,12 +206,12 @@ body {
 }
 
 .slide-content::-webkit-scrollbar-thumb {
-    background: rgba(59, 130, 246, 0.5);
+    background: rgba(178, 62, 255, 0.5);
     border-radius: 4px;
 }
 
 .slide-content::-webkit-scrollbar-thumb:hover {
-    background: rgba(59, 130, 246, 0.7);
+    background: rgba(178, 62, 255, 0.7);
 }
 
 @keyframes contentFadeIn {
@@ -234,12 +234,12 @@ body {
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 40px;
-    background: linear-gradient(135deg, #a78bfa, #60a5fa, #06b6d4);
+    background: linear-gradient(135deg, #B23EFF, #d580ff, #f0b3ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: titleAppear 0.8s ease-out backwards;
-    text-shadow: 0 0 40px rgba(167, 139, 250, 0.3);
+    text-shadow: 0 0 40px rgba(178, 62, 255, 0.4);
     letter-spacing: -0.02em;
 }
 
@@ -267,7 +267,7 @@ body {
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 30px;
-    background: linear-gradient(135deg, #60a5fa, #06b6d4, #3b82f6);
+    background: linear-gradient(135deg, #B23EFF, #d580ff, #f0b3ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -289,7 +289,7 @@ body {
 
 .slide-subtitle {
     font-size: 1.5rem;
-    color: #94a3b8;
+    color: #d580ff;
     margin-bottom: 40px;
     font-weight: 300;
     animation: subtitleAppear 1s ease-out 0.2s backwards;
@@ -308,7 +308,7 @@ body {
 .title-divider {
     width: 100px;
     height: 4px;
-    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    background: linear-gradient(90deg, #B23EFF, #d580ff);
     margin: 40px auto;
     border-radius: 2px;
     animation: dividerExpand 0.8s ease-out 0.4s backwards;
@@ -335,14 +335,14 @@ body {
 
 .slide-institute {
     font-size: 1.2rem;
-    color: #cbd5e1;
+    color: #f0b3ff;
     margin-bottom: 10px;
     animation: instituteAppear 1s ease-out 0.7s backwards;
 }
 
 .slide-year {
     font-size: 1rem;
-    color: #94a3b8;
+    color: #d580ff;
     animation: yearAppear 1s ease-out 0.8s backwards;
 }
 
@@ -387,9 +387,9 @@ body {
    =================================== */
 
 .content-box {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(45, 27, 78, 0.5));
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(42, 26, 61, 0.6));
     backdrop-filter: blur(15px);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    border: 1px solid rgba(178, 62, 255, 0.3);
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 25px;
@@ -398,14 +398,14 @@ body {
     overflow: hidden;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .content-box:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border-color: rgba(139, 92, 246, 0.6);
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(45, 27, 78, 0.6));
+    box-shadow: 0 20px 60px rgba(178, 62, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: rgba(178, 62, 255, 0.7);
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(42, 26, 61, 0.7));
 }
 
 @keyframes boxFadeIn {
@@ -431,20 +431,20 @@ body {
 .content-box h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #60a5fa;
+    color: #B23EFF;
     font-weight: 700;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
 
 .highlight-box {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(59, 130, 246, 0.3));
-    border: 2px solid rgba(139, 92, 246, 0.6);
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, rgba(178, 62, 255, 0.3), rgba(213, 128, 255, 0.3));
+    border: 2px solid rgba(178, 62, 255, 0.7);
+    box-shadow: 0 0 30px rgba(178, 62, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .highlight-box:hover {
-    box-shadow: 0 0 50px rgba(139, 92, 246, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 50px rgba(178, 62, 255, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .example-box {
@@ -515,7 +515,7 @@ body {
     content: "▸";
     position: absolute;
     left: 0;
-    color: #3b82f6;
+    color: #B23EFF;
     font-size: 1.5rem;
     line-height: 1.2;
 }
@@ -536,12 +536,13 @@ body {
    =================================== */
 
 .stat-box {
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    background: linear-gradient(135deg, rgba(178, 62, 255, 0.2), rgba(213, 128, 255, 0.2));
+    border: 2px solid rgba(178, 62, 255, 0.5);
     border-radius: 20px;
     padding: 40px;
     text-align: center;
     margin: 30px 0;
-    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 40px rgba(178, 62, 255, 0.3);
     animation: statPulse 1s ease-out;
 }
 
@@ -560,10 +561,11 @@ body {
 .stat-number {
     font-size: 5rem;
     font-weight: 900;
-    color: white;
-    line-height: 1;
+    background: linear-gradient(135deg, #B23EFF, #d580ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 10px;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .stat-label {
@@ -586,13 +588,13 @@ body {
 }
 
 .process-step {
-    background: rgba(59, 130, 246, 0.2);
-    border: 2px solid #3b82f6;
+    background: rgba(178, 62, 255, 0.2);
+    border: 2px solid #B23EFF;
     border-radius: 10px;
     padding: 20px 30px;
     font-weight: 600;
     font-size: 1.1rem;
-    color: #60a5fa;
+    color: #d580ff;
     animation: stepAppear 0.6s ease-out backwards;
 }
 
@@ -626,7 +628,7 @@ body {
 
 .process-arrow {
     font-size: 2rem;
-    color: #06b6d4;
+    color: #d580ff;
     font-weight: bold;
 }
 
@@ -678,7 +680,7 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    background: linear-gradient(135deg, #B23EFF, #d580ff);
     color: white;
     font-size: 2rem;
     font-weight: 900;
@@ -686,12 +688,12 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0 auto 15px;
-    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 8px 20px rgba(178, 62, 255, 0.4);
 }
 
 .cycle-label {
     font-size: 1.1rem;
-    color: #cbd5e1;
+    color: #f0b3ff;
     font-weight: 600;
 }
 
@@ -711,14 +713,14 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    background: linear-gradient(135deg, #B23EFF, #d580ff);
     color: white;
     font-size: 1.5rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 6px 15px rgba(178, 62, 255, 0.4);
     animation: nodeAppear 0.6s ease-out backwards;
 }
 
@@ -761,15 +763,15 @@ body {
 }
 
 .layer {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(6, 182, 212, 0.3));
-    border: 2px solid #3b82f6;
+    background: linear-gradient(135deg, rgba(178, 62, 255, 0.3), rgba(213, 128, 255, 0.3));
+    border: 2px solid #B23EFF;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 15px;
     text-align: center;
     font-size: 1.3rem;
     font-weight: 600;
-    color: #60a5fa;
+    color: #d580ff;
     animation: layerSlide 0.6s ease-out backwards;
 }
 
@@ -864,12 +866,12 @@ body {
    =================================== */
 
 .investment-box {
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    background: linear-gradient(135deg, #B23EFF, #d580ff);
     border-radius: 20px;
     padding: 50px;
     text-align: center;
     margin: 40px 0;
-    box-shadow: 0 15px 50px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 15px 50px rgba(178, 62, 255, 0.4);
     animation: investmentPulse 1s ease-out;
 }
 
@@ -903,8 +905,8 @@ body {
    =================================== */
 
 .conclusion-statement {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(6, 182, 212, 0.3));
-    border: 2px solid #3b82f6;
+    background: linear-gradient(135deg, rgba(178, 62, 255, 0.3), rgba(213, 128, 255, 0.3));
+    border: 2px solid #B23EFF;
     border-radius: 15px;
     padding: 40px;
     text-align: center;
@@ -913,9 +915,7 @@ body {
 }
 
 @keyframes conclusionGlow {
-    from {
-        box-shadow: 0 0 0 rgba(59, 130, 246, 0);
-    }
+    from {}
 
     to {
         box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
@@ -1155,52 +1155,55 @@ body {
 /* Mobile devices */
 @media (max-width: 768px) {
     .slide-content {
-        padding: 15px 10px;
-        max-width: 98%;
-        width: 98%;
-        max-height: 85vh;
+        padding: 20px 12px;
+        max-width: 96%;
+        width: 96%;
+        max-height: 88vh;
         overflow-y: auto;
     }
 
     .slide-title {
-        font-size: 2rem;
-        margin-bottom: 25px;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        letter-spacing: -0.01em;
     }
 
     .slide-title-main {
-        font-size: 2.2rem;
-        line-height: 1.3;
+        font-size: 2.5rem;
+        line-height: 1.2;
     }
 
     .slide-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .slide-author {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .slide-institute {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .content-box {
-        padding: 15px;
-        margin-bottom: 15px;
+        padding: 20px 16px;
+        margin-bottom: 18px;
+        border-radius: 16px;
         overflow: visible;
     }
 
     .content-box h3 {
-        font-size: 1.2rem;
-        line-height: 1.4;
+        font-size: 1.35rem;
+        line-height: 1.3;
+        margin-bottom: 12px;
     }
 
     .bullet-list li,
     .content-box ul li {
-        font-size: 0.95rem;
-        margin-bottom: 10px;
-        padding-left: 28px;
-        line-height: 1.5;
+        font-size: 1.05rem;
+        margin-bottom: 12px;
+        padding-left: 32px;
+        line-height: 1.6;
         word-break: break-word;
     }
 
@@ -1222,19 +1225,24 @@ body {
         gap: 15px;
     }
 
-    /* Navigation buttons - smaller on mobile */
+    /* Navigation buttons - optimized for mobile */
     .nav-btn {
-        width: 50px;
-        height: 50px;
+        width: 56px;
+        height: 56px;
+        box-shadow: 0 6px 24px rgba(139, 92, 246, 0.5);
+    }
+
+    .nav-btn:active {
+        transform: scale(0.9);
     }
 
     .nav-btn svg {
-        width: 24px;
-        height: 24px;
+        width: 26px;
+        height: 26px;
     }
 
     .nav-controls {
-        padding: 0 10px;
+        padding: 0 12px;
     }
 
     /* Slide counter - smaller on mobile */
@@ -1352,68 +1360,74 @@ body {
 /* Very small mobile devices */
 @media (max-width: 480px) {
     .slide-content {
-        padding: 10px 8px;
-        max-width: 99%;
-        width: 99%;
+        padding: 16px 10px;
+        max-width: 98%;
+        width: 98%;
     }
 
     .slide-title {
-        font-size: 1.5rem;
-        line-height: 1.3;
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin-bottom: 16px;
     }
 
     .slide-title-main {
-        font-size: 1.7rem;
-        line-height: 1.3;
+        font-size: 2rem;
+        line-height: 1.2;
     }
 
     .slide-subtitle {
-        font-size: 0.95rem;
+        font-size: 1.1rem;
     }
 
     .content-box {
-        padding: 12px;
-        margin-bottom: 12px;
+        padding: 16px 14px;
+        margin-bottom: 14px;
+        border-radius: 14px;
     }
 
     .content-box h3 {
-        font-size: 1.05rem;
+        font-size: 1.15rem;
         line-height: 1.3;
     }
 
     .bullet-list li,
     .content-box ul li {
-        font-size: 0.9rem;
-        padding-left: 25px;
-        line-height: 1.4;
+        font-size: 0.98rem;
+        padding-left: 28px;
+        line-height: 1.5;
     }
 
     .stat-number {
-        font-size: 3rem;
+        font-size: 3.2rem;
     }
 
     .stat-label {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 
     .nav-btn {
-        width: 45px;
-        height: 45px;
+        width: 52px;
+        height: 52px;
     }
 
     .nav-btn svg {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
     }
 
     .slide-counter {
-        font-size: 0.75rem;
-        padding: 6px 12px;
+        font-size: 0.85rem;
+        padding: 8px 14px;
     }
 
     .comparison-table th,
     .comparison-table td {
-        padding: 8px 10px;
-        font-size: 0.8rem;
+        padding: 10px 12px;
+        font-size: 0.88rem;
+    }
+
+    .emphasis-text {
+        font-size: 1.05rem;
     }
 }
