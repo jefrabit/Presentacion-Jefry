@@ -151,7 +151,13 @@
         }
     }
 
-    // Mouse wheel navigation (optional, can be disabled if too sensitive)
+    // ===================================
+    // Mouse Wheel Navigation (DISABLED)
+    // ===================================
+
+    // Disabled to prevent accidental slide changes
+    // Uncomment if you want to enable wheel navigation
+    /*
     let wheelTimeout;
     document.addEventListener('wheel', (e) => {
         clearTimeout(wheelTimeout);
@@ -161,8 +167,9 @@
             } else if (e.deltaY < 0) {
                 prevSlide();
             }
-        }, 100);
-    }, { passive: true });
+        }, 50);
+    });
+    */
 
     // ===================================
     // Initialization
@@ -174,7 +181,7 @@
 
         // Log initialization
         console.log('Presentación inicializada con 12 slides');
-        console.log('Controles: Flechas ← →, Espacio, Swipe, Rueda del mouse');
+        console.log('Controles: Flechas ← →, Espacio, Swipe (móvil)');
         console.log('Esc para volver al inicio');
     }
 
