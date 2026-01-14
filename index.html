@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Análisis racional sobre la necesidad de una tablet con lápiz digital para estudios universitarios">
+    <title>¿Por qué necesito una tablet con lápiz digital?</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter" id="slideCounter">1 / 12</div>
+
+    <!-- Navigation Controls -->
+    <div class="nav-controls">
+        <button class="nav-btn" id="prevBtn" aria-label="Diapositiva anterior">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <button class="nav-btn" id="nextBtn" aria-label="Siguiente diapositiva">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Slides Container -->
+    <div class="slides-container" id="slidesContainer">
+
+        <!-- Slide 1: Portada -->
+        <div class="slide active" data-slide="1">
+            <div class="slide-content title-slide">
+                <h1 class="slide-title-main">¿Por qué necesito una tablet con lápiz digital?</h1>
+                <p class="slide-subtitle">Análisis de necesidad académica</p>
+                <div class="title-divider"></div>
+                <p class="slide-author">Jefry Ramos Castillo</p>
+                <p class="slide-institute">Ingeniería de Sistemas • Educación Secundaria</p>
+                <p class="slide-year">2026</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Contexto Académico -->
+        <div class="slide" data-slide="2">
+            <div class="slide-content">
+                <h2 class="slide-title">Contexto Académico</h2>
+                <div class="content-box highlight-box">
+                    <h3>Situación actual</h3>
+                    <ul>
+                        <li>2 carreras universitarias simultáneas</li>
+                        <li>Ingeniería de Sistemas y Educación Secundaria</li>
+                        <li>10 cursos este semestre</li>
+                    </ul>
+                </div>
+                <div class="two-columns">
+                    <div class="stat-box">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Cursos técnicos de Sistemas (70%)</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Cursos de Educación (30%)</div>
+                    </div>
+                </div>
+                <p class="emphasis-text">Característica común: Alto contenido visual y procedimental</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Naturaleza de los Cursos -->
+        <div class="slide" data-slide="3">
+            <div class="slide-content">
+                <h2 class="slide-title">Naturaleza del Trabajo Académico</h2>
+                <div class="content-box">
+                    <h3>Cursos de Sistemas (7)</h3>
+                    <ul>
+                        <li><strong>Redes:</strong> Topologías, modelos OSI/TCP-IP, diagramas de flujo</li>
+                        <li><strong>Programación Competitiva:</strong> Algoritmos, pseudocódigo, casos de prueba</li>
+                        <li><strong>Estructuras de Datos:</strong> Árboles, grafos, simulaciones paso a paso</li>
+                        <li><strong>Investigación de Operaciones:</strong> Tablas Simplex iterativas (5-10 versiones)
+                        </li>
+                        <li><strong>Sistemas de Información:</strong> Diagramas UML, modelos ER, procesos</li>
+                        <li><strong>Ingeniería de Procesos:</strong> Mapeo de flujos, diagramas BPMN</li>
+                        <li><strong>Teoría de Sistemas:</strong> Mapas conceptuales, bucles de retroalimentación</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Cursos de Educación (3)</h3>
+                    <ul>
+                        <li><strong>Estadística:</strong> Gráficos, distribuciones, cálculos extensos</li>
+                        <li><strong>Sistemas Numéricos:</strong> Conversiones entre bases, procedimientos</li>
+                        <li><strong>Actividades Físicas:</strong> Registro de progreso y rutinas</li>
+                    </ul>
+                </div>
+                <p class="emphasis-text">Patrón común: Diagramación + Iteración + Corrección frecuente</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: El Método Actual (Problema) -->
+        <div class="slide" data-slide="4">
+            <div class="slide-content">
+                <h2 class="slide-title">Método Actual: Cuadernos en Papel</h2>
+                <div class="content-box">
+                    <h3>Recursos necesarios</h3>
+                    <ul>
+                        <li>2 cuadernos grandes de 200 páginas cada uno</li>
+                        <li>10 cursos mezclados en 2 cuadernos</li>
+                        <li>Peso total estimado: <strong>1.5-2 kg</strong> en mochila</li>
+                        <li>Reposición constante de materiales</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Limitaciones operativas</h3>
+                    <ul>
+                        <li>Corrección destructiva: Borrar = tachar o arrancar hoja</li>
+                        <li>Sin búsqueda: Encontrar un tema específico = revisar 200+ páginas</li>
+                        <li>Sin respaldo: Pérdida de cuaderno = pérdida de 5 cursos</li>
+                        <li>Desorganización extrema: 10 cursos mezclados en 2 cuadernos</li>
+                        <li>Desperdicio: Hojas arrugadas, tachadas, inutilizables</li>
+                        <li>Dificultad para separar contenido por curso</li>
+                    </ul>
+                </div>
+                <div class="highlight-box">
+                    <p><strong>Impacto en salud:</strong> Carga de 1.5-2 kg + problema principal de desorganización</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Consecuencias Medibles -->
+        <div class="slide" data-slide="5">
+            <div class="slide-content">
+                <h2 class="slide-title">Consecuencias del Método Actual</h2>
+                <div class="content-box">
+                    <h3>Tiempo perdido (estimación semanal)</h3>
+                    <ul>
+                        <li>Buscar información entre 200 páginas mezcladas: ~45 min</li>
+                        <li>Rehacer ejercicios por errores: ~45 min</li>
+                        <li>Identificar qué curso es cada sección: ~20 min</li>
+                    </ul>
+                    <div class="stat-box">
+                        <div class="stat-number">1.8h</div>
+                        <div class="stat-label">por semana = 7.2 horas/mes</div>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <h3>Desperdicio de recursos</h3>
+                    <ul>
+                        <li>Hojas arrugadas/tachadas: ~20-30 hojas/semana</li>
+                        <li>Cuadernos a medio usar que se descartan</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Limitación de aprendizaje</h3>
+                    <ul>
+                        <li>No puedo anotar sobre PDFs del profesor</li>
+                        <li>No puedo comparar versiones de un mismo diagrama</li>
+                        <li>No puedo usar apps especializadas (Draw.io, etc.)</li>
+                        <li>Imposible mantener organización clara por curso</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: La Tablet como Solución -->
+        <div class="slide" data-slide="6">
+            <div class="slide-content">
+                <h2 class="slide-title">Solución Propuesta: Tablet con Lápiz Digital</h2>
+                <div class="two-columns">
+                    <div class="content-box">
+                        <h3>Características técnicas necesarias</h3>
+                        <ul>
+                            <li>Pantalla táctil con soporte para lápiz de precisión</li>
+                            <li>Capacidad de ejecutar apps de diagramación</li>
+                            <li>Almacenamiento para documentos digitales</li>
+                            <li>Sincronización en nube (respaldo automático)</li>
+                        </ul>
+                    </div>
+                    <div class="content-box">
+                        <h3>Funcionalidades clave</h3>
+                        <ul>
+                            <li>Escritura natural con lápiz digital</li>
+                            <li>Borrado no destructivo (infinitas correcciones)</li>
+                            <li>Búsqueda de texto en apuntes</li>
+                            <li>Organización por carpetas digitales</li>
+                            <li>Anotación sobre PDFs</li>
+                            <li>Respaldo automático en nube</li>
+                            <li>Portabilidad (reemplaza 10 cuadernos)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Comparación Directa -->
+        <div class="slide" data-slide="7">
+            <div class="slide-content">
+                <h2 class="slide-title">Comparación: Papel vs. Tablet</h2>
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Criterio</th>
+                                <th>Papel (10 cuadernos)</th>
+                                <th>Tablet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Peso</td>
+                                <td>1.5-2 kg (2 cuadernos grandes)</td>
+                                <td class="highlight-cell">500-700 g</td>
+                            </tr>
+                            <tr>
+                                <td>Corrección</td>
+                                <td>Destructiva (tachar/arrancar)</td>
+                                <td class="highlight-cell">No destructiva (borrar infinito)</td>
+                            </tr>
+                            <tr>
+                                <td>Búsqueda</td>
+                                <td>Manual (revisar 200+ páginas)</td>
+                                <td class="highlight-cell">Instantánea (segundos)</td>
+                            </tr>
+                            <tr>
+                                <td>Respaldo</td>
+                                <td>No existe</td>
+                                <td class="highlight-cell">Automático en nube</td>
+                            </tr>
+                            <tr>
+                                <td>Organización</td>
+                                <td>10 cursos mezclados en 2 cuadernos</td>
+                                <td class="highlight-cell">1 dispositivo, carpetas separadas por curso</td>
+                            </tr>
+                            <tr>
+                                <td>Durabilidad</td>
+                                <td>Reposición constante</td>
+                                <td class="highlight-cell">4-5 años de uso</td>
+                            </tr>
+                            <tr>
+                                <td>Anotación en PDFs</td>
+                                <td>No posible</td>
+                                <td class="highlight-cell">Sí</td>
+                            </tr>
+                            <tr>
+                                <td>Apps especializadas</td>
+                                <td>No</td>
+                                <td class="highlight-cell">Sí (Draw.io, OneNote, etc.)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="stat-box">
+                    <p><strong>Resultado:</strong> Reducción de peso en 60-70%, búsqueda 95% más rápida, organización
+                        perfecta</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Beneficios Académicos -->
+        <div class="slide" data-slide="8">
+            <div class="slide-content">
+                <h2 class="slide-title">Beneficios Académicos Directos</h2>
+                <div class="content-box">
+                    <h3>Eficiencia en el estudio</h3>
+                    <ul>
+                        <li>Recuperación de <strong>7.2 horas/mes</strong> de tiempo perdido</li>
+                        <li>Búsqueda instantánea de temas anteriores</li>
+                        <li>Comparación lado a lado de diferentes versiones</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Calidad del trabajo</h3>
+                    <ul>
+                        <li>Diagramas más limpios y precisos</li>
+                        <li>Corrección ilimitada sin desperdiciar recursos</li>
+                        <li>Uso de herramientas profesionales (UML, BPMN)</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Organización</h3>
+                    <ul>
+                        <li>Todo centralizado en un dispositivo</li>
+                        <li>Clasificación por curso, tema, fecha</li>
+                        <li>Sincronización entre dispositivos</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Aprendizaje mejorado</h3>
+                    <ul>
+                        <li>Anotación directa sobre material del profesor</li>
+                        <li>Documentación visual de procesos paso a paso</li>
+                        <li>Archivo permanente de todo el contenido</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Beneficios de Salud -->
+        <div class="slide" data-slide="9">
+            <div class="slide-content">
+                <h2 class="slide-title">Beneficios para la Salud</h2>
+                <div class="two-columns">
+                    <div class="content-box">
+                        <h3>Reducción de carga física</h3>
+                        <ul>
+                            <li>De 1.5-2 kg a 500-700 g</li>
+                            <li><strong>Reducción del 60-70%</strong></li>
+                            <li>Menor tensión en espalda y hombros</li>
+                            <li>Prevención de problemas posturales a largo plazo</li>
+                        </ul>
+                    </div>
+                    <div class="content-box">
+                        <h3>Ergonomía</h3>
+                        <ul>
+                            <li>Dispositivo ajustable en ángulo</li>
+                            <li>Reducción de fatiga física durante estudio prolongado</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="note-text">Beneficio secundario pero relevante para sostenibilidad a largo plazo</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Valor de la Inversión -->
+        <div class="slide" data-slide="10">
+            <div class="slide-content">
+                <h2 class="slide-title">Valor de la Inversión</h2>
+                <div class="content-box highlight-box">
+                    <h3>Inversión inicial</h3>
+                    <ul>
+                        <li>Tablet con lápiz digital</li>
+                        <li>Vida útil: <strong>4-5 años</strong> (toda la carrera universitaria)</li>
+                        <li>Herramienta profesional post-graduación</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Retorno en productividad</h3>
+                    <ul>
+                        <li>Recuperación de <strong>7.2 horas/mes</strong> de tiempo perdido</li>
+                        <li>En 5 años: <strong>360 horas</strong> adicionales de estudio efectivo</li>
+                        <li>Equivalente a <strong>15 días completos</strong> de estudio puro</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Beneficios a largo plazo</h3>
+                    <ul>
+                        <li>Desarrollo de habilidades con herramientas profesionales</li>
+                        <li>Portfolio digital de todo el trabajo académico</li>
+                        <li>Preparación para el entorno laboral tecnológico</li>
+                    </ul>
+                </div>
+                <p class="emphasis-text">El valor real está en el tiempo y las oportunidades que genera</p>
+            </div>
+        </div>
+
+        <!-- Slide 11: Compromiso de Uso Responsable -->
+        <div class="slide" data-slide="11">
+            <div class="slide-content">
+                <h2 class="slide-title">Compromiso de Uso Responsable</h2>
+                <div class="content-box">
+                    <h3>Uso exclusivamente académico</h3>
+                    <ul>
+                        <li>Herramienta de trabajo, no entretenimiento</li>
+                        <li>Instalación solo de apps educativas y productivas</li>
+                        <li>Configuración de controles parentales si es necesario</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Cuidado del dispositivo</h3>
+                    <ul>
+                        <li>Funda protectora</li>
+                        <li>Mantenimiento adecuado</li>
+                        <li>Respaldo regular de información</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Aprovechamiento máximo</h3>
+                    <ul>
+                        <li>Uso diario en todos los cursos</li>
+                        <li>Exploración de apps especializadas</li>
+                        <li>Documentación de progreso académico</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Transparencia</h3>
+                    <ul>
+                        <li>Disponibilidad para mostrar uso y contenido</li>
+                        <li>Reportes periódicos de utilidad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Conclusión -->
+        <div class="slide" data-slide="12">
+            <div class="slide-content">
+                <h2 class="slide-title">Conclusión</h2>
+                <div class="content-box highlight-box">
+                    <h3>Resumen del análisis</h3>
+                    <ol>
+                        <li><strong>Problema identificado:</strong> Método actual ineficiente para 10 cursos técnicos
+                        </li>
+                        <li><strong>Consecuencias medibles:</strong> 6 horas/mes perdidas, 4 kg de carga, limitaciones
+                            de aprendizaje</li>
+                        <li><strong>Solución técnica:</strong> Tablet con lápiz digital</li>
+                        <li><strong>Beneficios cuantificables:</strong> 80% menos peso, 95% menos tiempo de búsqueda,
+                            300 horas recuperadas</li>
+                        <li><strong>Inversión justificada:</strong> Se amortiza en productividad y salud</li>
+                    </ol>
+                </div>
+                <div class="conclusion-statement">
+                    <p>Esta no es una petición emocional.</p>
+                    <p>Es una decisión lógica basada en análisis de necesidades y retorno de inversión.</p>
+                </div>
+                <div class="final-statement">
+                    <p>La pregunta no es "¿puedo permitirme una tablet?"</p>
+                    <p>La pregunta es <strong>"¿puedo permitirme NO tenerla?"</strong></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Keyboard Shortcuts Help -->
+    <div class="help-indicator">
+        <span>← →</span> Navegar | <span>Espacio</span> Siguiente | <span>Esc</span> Inicio
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

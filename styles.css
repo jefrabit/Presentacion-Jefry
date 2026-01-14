@@ -1,0 +1,1346 @@
+/* ===================================
+   Reset & Base Styles
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    color: #f1f5f9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: pan-y pinch-zoom;
+}
+
+/* ===================================
+   Progress Bar
+   =================================== */
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* ===================================
+   Slide Counter
+   =================================== */
+
+.slide-counter {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #94a3b8;
+    z-index: 999;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* ===================================
+   Navigation Controls
+   =================================== */
+
+.nav-controls {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.nav-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.5);
+    pointer-events: auto;
+    backdrop-filter: blur(10px);
+}
+
+.nav-btn:hover {
+    background: rgba(59, 130, 246, 1);
+    transform: scale(1.15);
+    box-shadow: 0 6px 30px rgba(59, 130, 246, 0.7);
+}
+
+.nav-btn:active {
+    transform: scale(0.95);
+}
+
+.nav-btn svg {
+    width: 28px;
+    height: 28px;
+}
+
+.nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.nav-btn:disabled:hover {
+    transform: scale(1);
+}
+
+/* ===================================
+   Slides Container
+   =================================== */
+
+.slides-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateX(100px);
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    animation: slideIn 0.6s ease-out;
+}
+
+.slide.prev {
+    transform: translateX(-100px);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===================================
+   Slide Content
+   =================================== */
+
+.slide-content {
+    max-width: 1100px;
+    width: 90%;
+    padding: 40px;
+    animation: contentFadeIn 0.8s ease-out 0.2s backwards;
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   Typography
+   =================================== */
+
+.slide-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #60a5fa, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleGlow 0.8s ease-out 0.3s backwards;
+}
+
+@keyframes titleGlow {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* ===================================
+   Title Slide
+   =================================== */
+
+.title-slide {
+    text-align: center;
+}
+
+.slide-title-main {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #60a5fa, #06b6d4, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    animation: mainTitleAppear 1s ease-out;
+}
+
+@keyframes mainTitleAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.slide-subtitle {
+    font-size: 1.5rem;
+    color: #94a3b8;
+    margin-bottom: 40px;
+    font-weight: 300;
+    animation: subtitleAppear 1s ease-out 0.2s backwards;
+}
+
+@keyframes subtitleAppear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.title-divider {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    margin: 40px auto;
+    border-radius: 2px;
+    animation: dividerExpand 0.8s ease-out 0.4s backwards;
+}
+
+@keyframes dividerExpand {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 100px;
+        opacity: 1;
+    }
+}
+
+.slide-author {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    animation: authorAppear 1s ease-out 0.6s backwards;
+}
+
+.slide-institute {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+    animation: instituteAppear 1s ease-out 0.7s backwards;
+}
+
+.slide-year {
+    font-size: 1rem;
+    color: #94a3b8;
+    animation: yearAppear 1s ease-out 0.8s backwards;
+}
+
+@keyframes authorAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes instituteAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes yearAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   Content Boxes
+   =================================== */
+
+.content-box {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    animation: boxFadeIn 0.6s ease-out backwards;
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+@keyframes boxFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-box:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.content-box:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.content-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #60a5fa;
+    font-weight: 700;
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2));
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.example-box {
+    background: rgba(51, 65, 85, 0.6);
+}
+
+/* ===================================
+   Lists
+   =================================== */
+
+.bullet-list {
+    list-style: none;
+    padding: 0;
+}
+
+.bullet-list li,
+.content-box ul li {
+    padding-left: 35px;
+    margin-bottom: 15px;
+    position: relative;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e2e8f0;
+    animation: listItemAppear 0.5s ease-out backwards;
+}
+
+.bullet-list li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.bullet-list li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bullet-list li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.bullet-list li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.bullet-list li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.bullet-list li:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+@keyframes listItemAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.bullet-list li::before,
+.content-box ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+/* ===================================
+   Two Columns Layout
+   =================================== */
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* ===================================
+   Stat Box
+   =================================== */
+
+.stat-box {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    margin: 30px 0;
+    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+    animation: statPulse 1s ease-out;
+}
+
+@keyframes statPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.stat-number {
+    font-size: 5rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.stat-label {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* ===================================
+   Process Flow
+   =================================== */
+
+.process-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.process-step {
+    background: rgba(59, 130, 246, 0.2);
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    padding: 20px 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #60a5fa;
+    animation: stepAppear 0.6s ease-out backwards;
+}
+
+.process-step:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.process-step:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.process-step:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.process-step:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+@keyframes stepAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.process-arrow {
+    font-size: 2rem;
+    color: #06b6d4;
+    font-weight: bold;
+}
+
+/* ===================================
+   Cycle Diagram
+   =================================== */
+
+.cycle-diagram {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+    gap: 20px;
+}
+
+.cycle-item {
+    text-align: center;
+    animation: cycleItemAppear 0.6s ease-out backwards;
+}
+
+.cycle-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.cycle-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.cycle-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.cycle-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes cycleItemAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) rotate(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+.cycle-number {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+.cycle-label {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+/* ===================================
+   Tree Diagram
+   =================================== */
+
+.tree-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.tree-node {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+    animation: nodeAppear 0.6s ease-out backwards;
+}
+
+.tree-node.root {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+}
+
+.tree-node.small {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+}
+
+.tree-level {
+    display: flex;
+    gap: 40px;
+}
+
+@keyframes nodeAppear {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===================================
+   Layer Stack
+   =================================== */
+
+.layer-stack {
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.layer {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(6, 182, 212, 0.3));
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #60a5fa;
+    animation: layerSlide 0.6s ease-out backwards;
+}
+
+.layer:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.layer:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.layer:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.layer:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes layerSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===================================
+   Problem & Solution Indicators
+   =================================== */
+
+.problem-indicator,
+.solution-indicator {
+    text-align: center;
+    padding: 40px;
+}
+
+.problem-icon,
+.solution-icon {
+    font-size: 6rem;
+    margin-bottom: 20px;
+    animation: iconBounce 1s ease-out;
+}
+
+.problem-icon {
+    color: #ef4444;
+}
+
+.solution-icon {
+    color: #10b981;
+}
+
+@keyframes iconBounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.problem-label,
+.solution-label {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.problem-label {
+    color: #ef4444;
+}
+
+.solution-label {
+    color: #10b981;
+}
+
+.problem-indicator p,
+.solution-indicator p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+/* ===================================
+   Investment Box
+   =================================== */
+
+.investment-box {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+    margin: 40px 0;
+    box-shadow: 0 15px 50px rgba(59, 130, 246, 0.4);
+    animation: investmentPulse 1s ease-out;
+}
+
+@keyframes investmentPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+.investment-box h3 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.investment-box p {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* ===================================
+   Conclusion Elements
+   =================================== */
+
+.conclusion-statement {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(6, 182, 212, 0.3));
+    border: 2px solid #3b82f6;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    margin: 30px 0;
+    animation: conclusionGlow 1s ease-out;
+}
+
+@keyframes conclusionGlow {
+    from {
+        box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+    }
+
+    to {
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+    }
+}
+
+.conclusion-statement p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #60a5fa;
+}
+
+.final-statement {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+}
+
+.final-statement p {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+}
+
+/* ===================================
+   Text Utilities
+   =================================== */
+
+.emphasis-text {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #60a5fa;
+    margin-top: 30px;
+    animation: emphasisGlow 0.8s ease-out 0.5s backwards;
+}
+
+@keyframes emphasisGlow {
+    from {
+        opacity: 0;
+        text-shadow: 0 0 0 rgba(96, 165, 250, 0);
+    }
+
+    to {
+        opacity: 1;
+        text-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+    }
+}
+
+.note-text {
+    text-align: center;
+    font-size: 1rem;
+    color: #94a3b8;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+/* ===================================
+   Help Indicator
+   =================================== */
+
+.help-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #64748b;
+    z-index: 999;
+    border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+.help-indicator span {
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* ===================================
+   Comparison Table
+   =================================== */
+
+.comparison-table {
+    margin: 40px 0;
+    overflow-x: auto;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.comparison-table thead {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+}
+
+.comparison-table th {
+    padding: 20px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.comparison-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    font-size: 1rem;
+    color: #e2e8f0;
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tbody tr {
+    transition: background 0.3s ease;
+}
+
+.comparison-table tbody tr:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.highlight-cell {
+    color: #10b981;
+    font-weight: 600;
+}
+
+/* ===================================
+   Conclusion Statements
+   =================================== */
+
+.conclusion-statement {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2));
+    border: 2px solid #3b82f6;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.conclusion-statement p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #60a5fa;
+    margin: 10px 0;
+}
+
+.final-statement {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    margin: 30px 0;
+    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+}
+
+.final-statement p {
+    font-size: 1.4rem;
+    color: white;
+    margin: 10px 0;
+}
+
+.final-statement strong {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+/* ===================================
+   Ordered Lists
+   =================================== */
+
+.content-box ol {
+    padding-left: 25px;
+    margin: 20px 0;
+}
+
+.content-box ol li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e2e8f0;
+    padding-left: 10px;
+}
+
+.content-box ol li strong {
+    color: #60a5fa;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+
+/* Tablets and smaller */
+@media (max-width: 1024px) {
+    .slide-content {
+        max-width: 90%;
+        padding: 30px 20px;
+    }
+
+    .slide-title {
+        font-size: 2.5rem;
+    }
+
+    .slide-title-main {
+        font-size: 2.8rem;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stat-number {
+        font-size: 4rem;
+    }
+
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 12px 15px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .slide-content {
+        padding: 20px 15px;
+        max-width: 95%;
+    }
+
+    .slide-title {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .slide-title-main {
+        font-size: 2.2rem;
+        line-height: 1.3;
+    }
+
+    .slide-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .slide-author {
+        font-size: 1.5rem;
+    }
+
+    .slide-institute {
+        font-size: 1rem;
+    }
+
+    .content-box {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .content-box h3 {
+        font-size: 1.3rem;
+    }
+
+    .bullet-list li,
+    .content-box ul li {
+        font-size: 1rem;
+        margin-bottom: 12px;
+        padding-left: 30px;
+    }
+
+    .stat-box {
+        padding: 30px 20px;
+        margin: 20px 0;
+    }
+
+    .stat-number {
+        font-size: 3.5rem;
+    }
+
+    .stat-label {
+        font-size: 1.1rem;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Navigation buttons - smaller on mobile */
+    .nav-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .nav-controls {
+        padding: 0 10px;
+    }
+
+    /* Slide counter - smaller on mobile */
+    .slide-counter {
+        top: 15px;
+        right: 15px;
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+
+    /* Help indicator - hide on mobile */
+    .help-indicator {
+        display: none;
+    }
+
+    /* Comparison table - scrollable on mobile */
+    .comparison-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .comparison-table table {
+        min-width: 600px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* Process flow - stack on mobile */
+    .process-flow {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .process-arrow {
+        transform: rotate(90deg);
+        font-size: 1.5rem;
+    }
+
+    /* Cycle diagram - smaller on mobile */
+    .cycle-diagram {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .cycle-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .cycle-label {
+        font-size: 1rem;
+    }
+
+    /* Tree diagram - smaller on mobile */
+    .tree-node {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .tree-node.root {
+        width: 65px;
+        height: 65px;
+        font-size: 1.6rem;
+    }
+
+    .tree-node.small {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .tree-level {
+        gap: 20px;
+    }
+
+    /* Layer stack */
+    .layer {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+
+    /* Conclusion statements */
+    .conclusion-statement {
+        padding: 25px 20px;
+    }
+
+    .conclusion-statement p {
+        font-size: 1.2rem;
+    }
+
+    .final-statement {
+        padding: 25px 20px;
+    }
+
+    .final-statement p {
+        font-size: 1.2rem;
+    }
+
+    .final-statement strong {
+        font-size: 1.3rem;
+    }
+
+    /* Ordered lists */
+    .content-box ol li {
+        font-size: 1rem;
+    }
+}
+
+/* Very small mobile devices */
+@media (max-width: 480px) {
+    .slide-title {
+        font-size: 1.6rem;
+    }
+
+    .slide-title-main {
+        font-size: 1.8rem;
+    }
+
+    .slide-subtitle {
+        font-size: 1rem;
+    }
+
+    .content-box {
+        padding: 15px;
+    }
+
+    .content-box h3 {
+        font-size: 1.1rem;
+    }
+
+    .bullet-list li,
+    .content-box ul li {
+        font-size: 0.95rem;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+
+    .nav-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .nav-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .slide-counter {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+}

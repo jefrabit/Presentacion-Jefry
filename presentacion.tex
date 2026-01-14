@@ -1,0 +1,569 @@
+\documentclass[aspectratio=169]{beamer}
+
+% ===================================
+% Packages
+% ===================================
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, backgrounds}
+
+% ===================================
+% Theme Configuration
+% ===================================
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% Custom colors - Technological palette
+\definecolor{primaryBlue}{RGB}{30, 58, 138}      % #1e3a8a
+\definecolor{accentBlue}{RGB}{37, 99, 235}       % #2563eb
+\definecolor{darkGray}{RGB}{31, 41, 55}          % #1f2937
+\definecolor{mediumGray}{RGB}{107, 114, 128}     % #6b7280
+\definecolor{lightGray}{RGB}{243, 244, 246}      % #f3f4f6
+
+% Apply color scheme
+\setbeamercolor{structure}{fg=primaryBlue}
+\setbeamercolor{palette primary}{bg=primaryBlue,fg=white}
+\setbeamercolor{palette secondary}{bg=accentBlue,fg=white}
+\setbeamercolor{palette tertiary}{bg=darkGray,fg=white}
+\setbeamercolor{frametitle}{bg=primaryBlue,fg=white}
+\setbeamercolor{title}{fg=primaryBlue}
+\setbeamercolor{block title}{bg=accentBlue,fg=white}
+\setbeamercolor{block body}{bg=lightGray,fg=darkGray}
+\setbeamercolor{item}{fg=accentBlue}
+
+% Font configuration
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\small}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Customize itemize
+\setbeamertemplate{itemize items}[circle]
+
+% Footer
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1ex,center]{palette tertiary}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.5ex,dp=1ex,center]{palette secondary}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1ex,right]{palette tertiary}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+% ===================================
+% Title Information
+% ===================================
+\title{Justificación para la adquisición de una tablet con lápiz digital}
+\subtitle{Herramienta académica para estudios universitarios}
+\author{Jefferson Franco}
+\institute{Ingeniería de Sistemas • Ingeniería Informática}
+\date{2026}
+
+% ===================================
+% Document
+% ===================================
+\begin{document}
+
+% ===================================
+% Title Slide
+% ===================================
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% ===================================
+% Contexto Académico
+% ===================================
+\begin{frame}{Contexto Académico}
+  \begin{block}{Carga académica elevada}
+    \begin{itemize}
+      \item Dos carreras universitarias simultáneas
+      \item Ingeniería de Sistemas e Ingeniería Informática
+      \item Alta demanda de organización y gestión del tiempo
+    \end{itemize}
+  \end{block}
+  
+  \vspace{0.5cm}
+  
+  \begin{center}
+    \begin{tikzpicture}
+      \node[rectangle, rounded corners, fill=accentBlue, text=white, minimum width=8cm, minimum height=1.2cm] 
+        {\Large\textbf{10 cursos en el semestre actual}};
+    \end{tikzpicture}
+  \end{center}
+  
+  \vspace{0.3cm}
+  
+  \begin{itemize}
+    \item Alta demanda técnica y matemática
+    \item Requiere metodología de estudio eficiente
+  \end{itemize}
+\end{frame}
+
+% ===================================
+% Magnitud del Semestre
+% ===================================
+\begin{frame}{Magnitud del Semestre}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Cursos Técnicos (6)}
+        \begin{itemize}
+          \item Algoritmos
+          \item Programación Competitiva
+          \item Estructuras de Datos Avanzados
+          \item Investigación de Operaciones
+          \item Sistemas de Comunicación
+          \item Sistemas de Información
+        \end{itemize}
+      \end{block}
+    \end{column}
+    
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Cursos de Educación (4)}
+        \begin{itemize}
+          \item Estadística
+          \item Sistemas Numéricos
+          \item Cursos complementarios
+          \item Seguimiento continuo
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+  
+  \vspace{0.5cm}
+  \centering
+  \textcolor{primaryBlue}{\textbf{Cada curso requiere apuntes, diagramas y resolución de problemas}}
+\end{frame}
+
+% ===================================
+% Algoritmos
+% ===================================
+\begin{frame}{Algoritmos}
+  \begin{itemize}
+    \item Análisis y diseño de algoritmos complejos
+    \item Matemáticas aplicadas (complejidad, optimización)
+    \item Diagramas de flujo y pseudocódigo
+    \item Corrección y optimización iterativa
+  \end{itemize}
+  
+  \vspace{0.5cm}
+  
+  \begin{center}
+    \begin{tikzpicture}[node distance=1.5cm]
+      \node (start) [rectangle, rounded corners, fill=accentBlue!20, text width=2.5cm, text centered] {Problema};
+      \node (analyze) [rectangle, rounded corners, fill=accentBlue!40, text width=2.5cm, text centered, right=of start] {Análisis};
+      \node (design) [rectangle, rounded corners, fill=accentBlue!60, text width=2.5cm, text centered, right=of analyze] {Diseño};
+      \node (optimize) [rectangle, rounded corners, fill=accentBlue!80, text width=2.5cm, text centered, right=of design] {Optimización};
+      
+      \draw[-{Stealth[length=3mm]}] (start) -- (analyze);
+      \draw[-{Stealth[length=3mm]}] (analyze) -- (design);
+      \draw[-{Stealth[length=3mm]}] (design) -- (optimize);
+    \end{tikzpicture}
+  \end{center}
+  
+  \vspace{0.3cm}
+  \centering
+  \textcolor{mediumGray}{\small Requiere corrección constante y esquemas visuales}
+\end{frame}
+
+% ===================================
+% Programación Competitiva
+% ===================================
+\begin{frame}{Programación Competitiva}
+  \begin{itemize}
+    \item Resolución intensiva de problemas algorítmicos
+    \item Práctica constante con retroalimentación inmediata
+    \item Necesidad de corrección y refinamiento continuo
+    \item Documentación de estrategias y soluciones
+  \end{itemize}
+  
+  \vspace{0.5cm}
+  
+  \begin{center}
+    \begin{tikzpicture}
+      \foreach \x/\label in {1/Problema, 2/Solución, 3/Corrección, 4/Optimización} {
+        \node[circle, fill=accentBlue, text=white, minimum size=1.8cm] at ({(\x-1)*3},0) {\textbf{\x}};
+        \node[text=darkGray] at ({(\x-1)*3},-1) {\label};
+      }
+      \foreach \x in {1,2,3} {
+        \draw[-{Stealth[length=3mm]}, very thick, accentBlue] ({(\x-1)*3+0.9},0) -- ({(\x)*3-0.9},0);
+      }
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+% ===================================
+% Estructuras de Datos Avanzados
+% ===================================
+\begin{frame}{Estructuras de Datos Avanzados}
+  \begin{itemize}
+    \item Árboles binarios, AVL, B-trees
+    \item Grafos y algoritmos de recorrido
+    \item Estructuras complejas y sus aplicaciones
+    \item Importancia crítica de esquemas visuales
+  \end{itemize}
+  
+  \vspace{0.5cm}
+  
+  \begin{center}
+    \begin{tikzpicture}[
+      level 1/.style={sibling distance=3cm},
+      level 2/.style={sibling distance=1.5cm},
+      every node/.style={circle, draw=accentBlue, fill=accentBlue!20, minimum size=0.8cm}
+    ]
+      \node {R}
+        child {node {A}
+          child {node {C}}
+          child {node {D}}
+        }
+        child {node {B}
+          child {node {E}}
+          child {node {F}}
+        };
+    \end{tikzpicture}
+  \end{center}
+  
+  \vspace{0.3cm}
+  \centering
+  \textcolor{mediumGray}{\small Los diagramas son esenciales para la comprensión}
+\end{frame}
+
+% ===================================
+% Investigación de Operaciones
+% ===================================
+\begin{frame}{Investigación de Operaciones}
+  \begin{itemize}
+    \item Modelos matemáticos extensos y complejos
+    \item Programación lineal y optimización
+    \item Procedimientos paso a paso detallados
+    \item Múltiples iteraciones y correcciones
+  \end{itemize}
+  
+  \vspace{0.5cm}
+  
+  \begin{block}{Ejemplo: Método Simplex}
+    \centering
+    \begin{tikzpicture}
+      \node[rectangle, rounded corners, fill=lightGray, text=darkGray, text width=10cm, align=center] {
+        Requiere tablas extensas, cálculos iterativos\\
+        y correcciones frecuentes durante el proceso
+      };
+    \end{tikzpicture}
+  \end{block}
+  
+  \vspace{0.3cm}
+  \centering
+  \textcolor{primaryBlue}{\textbf{Imposible de gestionar eficientemente en papel}}
+\end{frame}
+
+% ===================================
+% Sistemas de Comunicación de Datos
+% ===================================
+\begin{frame}{Sistemas de Comunicación de Datos}
+  \begin{itemize}
+    \item Arquitecturas de redes y protocolos
+    \item Diagramas de topologías de red
+    \item Modelos OSI y TCP/IP
+    \item Esquemas de comunicación y flujo de datos
+  \end{itemize}
+  
+  \vspace{0.5cm}
+  
+  \begin{center}
+    \begin{tikzpicture}
+      \foreach \y/\label in {0/Aplicación, 1/Transporte, 2/Red, 3/Enlace} {
+        \node[rectangle, rounded corners, fill=accentBlue, text=white, minimum width=6cm, minimum height=0.8cm] 
+          at (0,{-\y*1}) {\label};
+      }
+    \end{tikzpicture}
+  \end{center}
+  
+  \vspace{0.3cm}
+  \centering
+  \textcolor{mediumGray}{\small Contenido altamente visual y esquemático}
+\end{frame}
+
+% ===================================
+% Sistemas de Información e Ingeniería de Procesos
+% ===================================
+\begin{frame}{Sistemas de Información e Ingeniería de Procesos}
+  \begin{itemize}
+    \item Diagramas de procesos de negocio
+    \item Modelado de sistemas empresariales
+    \item Diagramas UML y de flujo
+    \item Documentación técnica extensa
+  \end{itemize}
+  
+  \vspace{0.5cm}
+  
+  \begin{center}
+    \begin{tikzpicture}[node distance=2cm]
+      \node (req) [rectangle, rounded corners, fill=accentBlue!30, minimum width=2cm, minimum height=1cm] {Requisitos};
+      \node (design) [rectangle, rounded corners, fill=accentBlue!50, minimum width=2cm, minimum height=1cm, right=of req] {Diseño};
+      \node (impl) [rectangle, rounded corners, fill=accentBlue!70, minimum width=2cm, minimum height=1cm, right=of design] {Implementación};
+      
+      \draw[-{Stealth[length=3mm]}, very thick] (req) -- (design);
+      \draw[-{Stealth[length=3mm]}, very thick] (design) -- (impl);
+    \end{tikzpicture}
+  \end{center}
+  
+  \vspace{0.3cm}
+  \centering
+  \textcolor{primaryBlue}{\textbf{Requiere herramientas de diagramación eficientes}}
+\end{frame}
+
+% ===================================
+% Cursos de Educación
+% ===================================
+\begin{frame}{Cursos de Educación}
+  \begin{block}{Estadística}
+    \begin{itemize}
+      \item Análisis de datos y distribuciones
+      \item Gráficos y representaciones visuales
+      \item Cálculos extensos y tablas
+    \end{itemize}
+  \end{block}
+  
+  \vspace{0.3cm}
+  
+  \begin{block}{Sistemas Numéricos}
+    \begin{itemize}
+      \item Conversiones entre bases numéricas
+      \item Operaciones y algoritmos
+      \item Registro y seguimiento detallado
+    \end{itemize}
+  \end{block}
+  
+  \vspace{0.3cm}
+  \centering
+  \textcolor{mediumGray}{\small Requieren organización y claridad en los apuntes}
+\end{frame}
+
+% ===================================
+% Problema del Método Tradicional
+% ===================================
+\begin{frame}{Problema del Método Tradicional}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Situación Actual}
+        \begin{itemize}
+          \item 10 cuadernos diferentes
+          \item Mochila excesivamente pesada
+          \item Desorganización frecuente
+          \item Dificultad para encontrar información
+          \item Imposibilidad de corrección eficiente
+        \end{itemize}
+      \end{block}
+    \end{column}
+    
+    \begin{column}{0.48\textwidth}
+      \begin{center}
+        \vspace{2cm}
+        {\Huge\textcolor{red}{\textbf{INEFICIENTE}}}
+        \vspace{0.5cm}
+        
+        \textcolor{darkGray}{Método tradicional\\no sostenible}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ===================================
+% La Tablet como Solución
+% ===================================
+\begin{frame}{La Tablet como Solución}
+  \begin{center}
+    \vspace{0.5cm}
+    {\Huge\textcolor{green!60!black}{\textbf{SOLUCIÓN ÓPTIMA}}}
+    \vspace{0.5cm}
+  \end{center}
+  
+  \begin{itemize}
+    \item \textbf{Un solo dispositivo} para todos los cursos
+    \item \textbf{Apuntes digitales} con lápiz táctil de precisión
+    \item \textbf{Organización centralizada} por carpetas y etiquetas
+    \item \textbf{Búsqueda instantánea} de información
+    \item \textbf{Corrección sin límites} (borrar y reescribir)
+    \item \textbf{Sincronización en la nube} (respaldo automático)
+  \end{itemize}
+\end{frame}
+
+% ===================================
+% Beneficios Académicos
+% ===================================
+\begin{frame}{Beneficios Académicos}
+  \begin{block}{Organización}
+    \begin{itemize}
+      \item Todos los apuntes en un solo lugar
+      \item Clasificación por curso, tema y fecha
+      \item Acceso inmediato a cualquier contenido
+    \end{itemize}
+  \end{block}
+  
+  \begin{block}{Eficiencia en el Estudio}
+    \begin{itemize}
+      \item Repasos más rápidos y efectivos
+      \item Posibilidad de anotar sobre PDFs y diapositivas
+      \item Integración con herramientas académicas
+    \end{itemize}
+  \end{block}
+  
+  \begin{block}{Calidad}
+    \begin{itemize}
+      \item Diagramas más claros y precisos
+      \item Corrección ilimitada sin desperdiciar papel
+      \item Mayor claridad visual en apuntes
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+% ===================================
+% Beneficios para la Salud
+% ===================================
+\begin{frame}{Beneficios para la Salud}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Reducción de Peso}
+        \begin{itemize}
+          \item Mochila significativamente más ligera
+          \item Menor carga en espalda y hombros
+          \item Prevención de problemas posturales
+        \end{itemize}
+      \end{block}
+    \end{column}
+    
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Mejor Postura}
+        \begin{itemize}
+          \item Dispositivo ergonómico
+          \item Ajuste de ángulo de visualización
+          \item Reducción de fatiga física
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+  
+  \vspace{0.5cm}
+  
+  \begin{center}
+    \begin{tikzpicture}
+      \node[rectangle, rounded corners, fill=green!20, text=darkGray, minimum width=10cm, minimum height=1.2cm, align=center] 
+        {\textbf{Impacto positivo en salud física a largo plazo}};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+% ===================================
+% Inversión Educativa
+% ===================================
+\begin{frame}{Inversión Educativa}
+  \begin{itemize}
+    \item Costo razonable en comparación con beneficios
+    \item Uso a largo plazo (toda la carrera universitaria)
+    \item Herramienta profesional para el futuro
+    \item Retorno de inversión en productividad académica
+  \end{itemize}
+  
+  \vspace{0.5cm}
+  
+  \begin{center}
+    \begin{tikzpicture}
+      \node[rectangle, rounded corners, fill=accentBlue, text=white, minimum width=8cm, minimum height=2.5cm, align=center] 
+        {\Large\textbf{No es un gasto}\\[0.3cm]
+         \large Es una inversión en educación\\
+         y desarrollo profesional};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+% ===================================
+% Compromiso Personal
+% ===================================
+\begin{frame}{Compromiso Personal}
+  \begin{block}{Uso Académico}
+    \begin{itemize}
+      \item Dedicación exclusiva a actividades universitarias
+      \item Herramienta de trabajo, no entretenimiento
+      \item Enfoque en productividad y organización
+    \end{itemize}
+  \end{block}
+  
+  \vspace{0.3cm}
+  
+  \begin{block}{Responsabilidad}
+    \begin{itemize}
+      \item Cuidado y mantenimiento del dispositivo
+      \item Uso eficiente y planificado
+      \item Aprovechamiento máximo de sus capacidades
+    \end{itemize}
+  \end{block}
+  
+  \vspace{0.3cm}
+  
+  \begin{center}
+    \textcolor{primaryBlue}{\large\textbf{Compromiso con la excelencia académica}}
+  \end{center}
+\end{frame}
+
+% ===================================
+% Conclusión
+% ===================================
+\begin{frame}{Conclusión}
+  \begin{center}
+    \Large\textcolor{primaryBlue}{\textbf{No es un lujo, es una herramienta necesaria}}
+  \end{center}
+  
+  \vspace{0.8cm}
+  
+  \begin{itemize}
+    \item La carga académica actual requiere herramientas eficientes
+    \item El método tradicional es insostenible para 10 cursos técnicos
+    \item La tablet optimiza organización, salud y rendimiento
+    \item Inversión educativa con beneficios a largo plazo
+    \item Compromiso personal de uso responsable y académico
+  \end{itemize}
+  
+  \vspace{0.8cm}
+  
+  \begin{center}
+    \begin{tikzpicture}
+      \node[rectangle, rounded corners, fill=primaryBlue, text=white, minimum width=10cm, minimum height=1.5cm, align=center] 
+        {\Large\textbf{Decisión planificada y racional}};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+% ===================================
+% Final Slide
+% ===================================
+\begin{frame}
+  \begin{center}
+    \Huge\textcolor{primaryBlue}{\textbf{Gracias}}
+    
+    \vspace{1cm}
+    
+    \Large Jefferson Franco
+    
+    \vspace{0.3cm}
+    
+    \large Ingeniería de Sistemas • Ingeniería Informática
+    
+    \vspace{0.3cm}
+    
+    \normalsize 2026
+  \end{center}
+\end{frame}
+
+\end{document}
